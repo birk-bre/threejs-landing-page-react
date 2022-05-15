@@ -7,12 +7,12 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/nokia-v1-transformed.glb')
+  const { nodes, materials } = useGLTF('/bracket-transformed.glb')
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.nokia.geometry} material={materials.Low_poly} rotation={[-1.57, -0.01, -3.13]} />
+      <mesh geometry={nodes.Text.geometry} material={materials['Material.005']} />
     </group>
   )
 }
 
-useGLTF.preload('/nokia-v1-transformed.glb')
+useGLTF.preload('/bracket-transformed.glb')

@@ -7,12 +7,12 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/window-transformed.glb')
+  const { nodes, materials } = useGLTF('/brace-transformed.glb')
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.window.geometry} material={materials['palette.001']} rotation={[1.57, 0.01, -3.13]} />
+      <mesh geometry={nodes.brace.geometry} material={materials['Material.002']} position={[0.48, 0.46, 0.25]} scale={0.73} />
     </group>
   )
 }
 
-useGLTF.preload('/window-transformed.glb')
+useGLTF.preload('/brace-transformed.glb')

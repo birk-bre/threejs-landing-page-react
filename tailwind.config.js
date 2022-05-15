@@ -3,6 +3,25 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        typing: {
+          from: {
+            width: "0%",
+          },
+          to: {
+            width: "100%",
+          },
+        },
+        blink: {
+          from: {
+            opacity: 0,
+          },
+          "50%": {
+            opacity: 1,
+          },
+          to: {
+            opacity: 0,
+          },
+        },
         fadein: {
           from: {
             opacity: 0,
@@ -14,7 +33,8 @@ module.exports = {
       },
       animation: {
         fadein: "fadein 2.5s ease-in-out forwards",
-        blink: "fadein 1s linear infinite",
+        blink: "blink 1s step-end infinite",
+        typing: "typing 1.5s steps(20, end) forwards",
       },
     },
   },
