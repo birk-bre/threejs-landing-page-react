@@ -17,7 +17,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-simple-typewriter": "^3.0.1",
-    "three": "^0.140.2"
+    "three": "^0.140.2",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

@@ -1,17 +1,30 @@
 import { Suspense } from "react";
 import React from "react ";
+import Typewriter from "typewriter-effect";
+
 const App = () => {
   const RenderCanvas = React.lazy(() => import("./RenderCanvas"));
   return (
-    <div className="h-full relative">
+    <div className="h-screen w-screen relative">
       <div className="z-10 absolute right-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-fit">
-        <span
-          style={{
-            animation: "typing 1.5s steps(15, end) 2s forwards",
-          }}
-          className="w-0 text-6xl font-bold my-0 mx-auto overflow-hidden whitespace-nowrap items-end flex animate-typing"
-        >
-          Hello world<span className=" animate-blink text-5xl">_</span>
+        <span className="lg:text-6xl text-4xl font-extrabold w-full break-words">
+          <Typewriter
+            options={{
+              cursor: "_",
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .pauseFor(2500)
+                .typeString("consle")
+                .pauseFor(200)
+                .deleteChars(3)
+                .typeString('sole.log("helo')
+                .pauseFor(200)
+                .deleteChars(1)
+                .typeString('lo world");')
+                .start();
+            }}
+          />
         </span>
       </div>
       <Suspense fallback={null}>
