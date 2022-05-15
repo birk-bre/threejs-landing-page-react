@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       animation: {
-        fadein: "fadein 1.5s ease-in-out forwards",
+        fadein: "fadein 4s ease-in-out forwards",
         blink: "blink 1s step-end infinite",
         typing: "typing 1.5s steps(12, end) forwards",
       },

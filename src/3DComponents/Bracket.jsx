@@ -19,13 +19,11 @@ export const Bracket = ({ index, z }) => {
     scale: 1,
   });
 
-  if (ref.current) console.log(ref.current);
-
   useFrame((state, dt) => {
     if (dt < 0.1)
       ref.current.position.set(
         index === 0 ? 0 : data.x * width,
-        (data.y += dt * 1),
+        (data.y += dt * 0.5),
         -z
       );
 
@@ -50,23 +48,22 @@ export const Bracket = ({ index, z }) => {
   });
 
   return (
-    <Detailed distances={[0, 0, 80]} ref={ref} scale={2.5}>
-      <group>
-        <mesh
-          geometry={nodes.Text.geometry}
-          material={materials["Material.005"]}
-          onPointerEnter={() => setHover(true)}
-          onPointerLeave={() => setHover(false)}
-        >
-          <meshStandardMaterial
-            color={
-              hover
-                ? "orange"
-                : "#" + Math.floor(Math.random() * 16777215).toString(16)
-            }
-          />
-        </mesh>
-      </group>
+    <Detailed
+      distances={[0, 0, 80]}
+      ref={ref}
+      scale={3.5}
+      onPointerEnter={() => setHover(true)}
+      onPointerLeave={() => setHover(false)}
+    >
+      <mesh geometry={nodes.Text.geometry} material={materials["Material.005"]}>
+        <meshStandardMaterial
+          color={
+            hover
+              ? "orange"
+              : "#" + Math.floor(Math.random() * 16777215).toString(16)
+          }
+        />
+      </mesh>
     </Detailed>
   );
 };
